@@ -1,0 +1,63 @@
+html, body{
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+body{
+	position: absolute;
+	background-color: #FFB933;
+	text-align: center;
+}
+
+form{
+	padding-top: 10px;
+}
+
+.phpResponse{
+	padding-bottom: 15px;
+}
+
+.wrapper{
+	position: absolute;
+	z-index: -1;
+	background-color: #4E2784;
+	/*background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_the_Soviet_Union_%28vertical%29.svg");
+	background-image: url("http://w4.wallls.com/uploads/original/201711/26/wallls.com_171867.jpg");*/
+	background-size: cover;
+	height: 100%;
+	width: 1200px;
+	left: 50%;
+	margin-left: -600px;
+}
+
+.wrapper2{
+	position: absolute;
+	z-index: -1;
+	background-color: #4E2784;
+	/*background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_the_Soviet_Union_%28vertical%29.svg");*/
+	background-image: url("http://w4.wallls.com/uploads/original/201711/26/wallls.com_171867.jpg");
+	background-size: cover;
+	height: 100%;
+	width: 1200px;
+	left: 50%;
+	margin-left: -600px;
+}
+
+.tigerLogo{
+	width: auto;
+	height: auto;
+	max-height: 150px;
+}
+
+.taiga{
+	width: auto;
+	height: auto;
+	max-height: 408px;
+}
+
+.taiga2{
+	width: auto;
+	height: auto;
+	max-height: 550px;
+}

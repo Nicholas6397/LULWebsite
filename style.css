@@ -44,6 +44,16 @@ form{
 	margin-left: -600px;
 }
 
+.content{
+	position: absolute;
+	/*z-index: -1;*/
+	background-color: #4E2784;
+	background-size: cover;
+	width: 1200px;
+	left: 50%;
+	margin-left: -600px;
+}
+
 .tigerLogo{
 	width: auto;
 	height: auto;

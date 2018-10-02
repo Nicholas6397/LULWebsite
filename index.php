@@ -14,9 +14,15 @@
 				if ($secret == 1){
 					echo "<a style='color: blue' href='./anime.php'>Enter if you dare</a>";
 				} else{
-					echo "Nothing to see here, Камрад"
+					echo "Nothing to see here, Камрад";
 				}
 			?>
+			<form style="text-align: center; margin: 0 auto" action="./login.php" method="post">
+				Username: <input type="text" name="username"><br>
+				Password: <input style="margin-left: 5px; margin-top: 5px" type="password" name="password"><br>
+				<input style="margin-top: 5px; margin-left: 100px" type="submit" value="login">
+				<input onclick="location.href='./register.php'" type="button" value="register">
+			</form>
 		</div>
 	</body>
 </html>

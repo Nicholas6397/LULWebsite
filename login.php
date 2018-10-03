@@ -11,8 +11,11 @@
 		<div class="content">
 			<img class="tigerLogo" src="https://i.pinimg.com/originals/06/fb/09/06fb09b432edcd014b5a5b201847af9d.png"><br>
 			<?php
-
-				##Always remove before push
+			
+				$serverName = "localhost";
+				$serverUsername = $_SERVER["MYSQL_USERNAME"];
+				$serverPassword = $_SERVER["MYSQL_PASSWORD"];
+				$serverDatabase = $_SERVER["MYSQL_DATABASE"];
 
 				$conn = mysqli_connect("$serverName", "$serverUsername", "$serverPassword", "$serverDatabase");
 				if (!$conn){

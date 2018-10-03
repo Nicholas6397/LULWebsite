@@ -13,7 +13,10 @@
 				$username = $_POST["username"];
 				$password = $_POST["password"];
 
-				##Always remove before push
+				$serverName = "localhost";
+				$serverUsername = $_SERVER["MYSQL_USERNAME"];
+				$serverPassword = $_SERVER["MYSQL_PASSWORD"];
+				$serverDatabase = $_SERVER["MYSQL_DATABASE"];
 
 				$conn = mysqli_connect("$serverName", "$serverUsername", "$serverPassword", "$serverDatabase");
 				if(!$conn){

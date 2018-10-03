@@ -14,6 +14,10 @@ form{
 	padding-top: 10px;
 }
 
+a{
+	color: blue;
+}
+
 .phpResponse{
 	padding-bottom: 15px;
 }

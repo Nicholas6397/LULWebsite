@@ -10,11 +10,11 @@
 		<div class="wrapper"></div>
 		<div class="content">
 			<img class="tigerLogo" src="https://i.pinimg.com/originals/06/fb/09/06fb09b432edcd014b5a5b201847af9d.png"><br>
-			<?php
-				$username = $_POST["username"];
-				$password = $_POST["password"];
-				echo $username . " " . $password;
-			?>
+			<form style="text-align: center; margin: 0 auto" action="./confirmregistration.php" method="post">
+				<input type="text" name="username" placeholder="enter desired username"><br>
+				<input style="margin-top: 5px" type="password" name="password" placeholder="enter desired password"><br>
+				<input style="margin-top: 5px" type="submit" value="register">
+			</form>
 		</div>
 	</body>
 </html>

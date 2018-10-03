@@ -26,15 +26,25 @@
 
 				$username = $_POST["username"];
 				$password = $_POST["password"];
-				echo md5($password)."<br>";
 
 				$query = "SELECT * FROM profiles WHERE username='$username' AND password='$password'";
 				$result = mysqli_query($conn, $query);
 
 				if (mysqli_num_rows($result)){
-					echo "logged in<br>";
+					$cookie_value = md5($_POST['username']);
+					$cookie_query = "UPDATE profiles SET cookie_hash='$cookie_value' WHERE username='$username' AND password='$password'";
+					mysqli_query($conn, $cookie_query);
+					setcookie("LSU_TAIGA_LOGIN", $cookie_value, time() + 3600, '/');
+					echo "logged in<br>You will be automatically redirected in 5 seconds";
+					?>
+					<script type="text/javascript">
+						setTimeout(function(){
+							window.location.href="../";
+						}, 5000);
+					</script>
+					<?php
 				}else{
-					echo "invalid username/password combination<br>Click <a style='color: blue' href='.\'>here</a> to return to the homepage<br>";
+					echo "invalid username/password combination<br>Click <a style='color: blue' href='../'>here</a> to return to the homepage<br>";
 				}
 
 				mysqli_close($conn);

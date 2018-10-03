@@ -12,16 +12,30 @@
 			<?php
 				$secret = mt_rand(0, 100);
 				if ($secret == 100){
-					echo "<a style='color: blue' href='./anime.php'>Enter if you dare</a>";
+					echo "<a style='color: blue' href='./anime.php'>Enter if you dare</a><br>";
 				} else{
-					echo "Nothing to see here, Камрад";
+					echo "Nothing to see here, Камрад<br>";
 				}
 			?>
-			<form style="text-align: center; margin: 0 auto" action="./login.php" method="post">
-				<input type="text" name="username" placeholder="username or e-mail"><br>
-				<input style="margin-top: 5px" type="password" name="password" placeholder="password"><br>
-				<input style="margin-top: 5px" type="submit" value="login">
-				<input onclick="location.href='./register.php'" type="button" value="register">
+			<?php
+				if(isset($_COOKIE["LSU_TAIGA_LOGIN"])){
+					echo "You are logged in<br>";
+					?>
+					<form style="text-align: center; margin: 0 auto" action="./logout.php" method="post">
+						<input type="submit" value="logout">
+					</form>
+					<?php
+				} else{
+					?>
+					<form style="text-align: center; margin: 0 auto" action="./login.php" method="post">
+						<input type="text" name="username" placeholder="username or e-mail"><br>
+						<input style="margin-top: 5px" type="password" name="password" placeholder="password"><br>
+						<input style="margin-top: 5px" type="submit" value="login">
+						<input onclick="location.href='./register.php'" type="button" value="register">
+					</form>
+					<?php
+				}
+			?>
 			</form>
 		</div>
 	</body>

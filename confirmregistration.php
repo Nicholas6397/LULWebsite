@@ -11,7 +11,7 @@
 			<img class="tigerLogo" src="https://i.pinimg.com/originals/06/fb/09/06fb09b432edcd014b5a5b201847af9d.png"><br>
 			<?php
 				$username = $_POST["username"];
-				$password = $_POST["password"];
+				$password = md5($_POST["password"]);
 
 				$serverName = "localhost";
 				$serverUsername = $_SERVER["MYSQL_USERNAME"];
@@ -29,7 +29,16 @@
 				if(mysqli_num_rows($result)){
 					echo "username is unavailable<br>Click <a style='color: blue' href='.\'>here</a> to return to registration and try a new username";
 				} else{
-					echo "username available";
+					$query = "INSERT INTO profiles (username, password) VALUES ('$username', '$password')";
+					mysqli_query($conn, $query);
+					echo "username available<br>Redirecting you in 5 seconds to login page so that you may login";
+					?>
+					<script type="text/javascript">
+						setTimeout(function(){
+							window.location.href="../"
+						}, 5000);
+					</script>
+					<?php
 				}
 
 				mysqli_close($conn);

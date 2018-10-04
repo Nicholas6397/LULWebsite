@@ -25,7 +25,7 @@
 				}
 
 				$username = $_POST["username"];
-				$password = $_POST["password"];
+				$password = md5($_POST["password"]);
 
 				$query = "SELECT * FROM profiles WHERE username='$username' AND password='$password'";
 				$result = mysqli_query($conn, $query);

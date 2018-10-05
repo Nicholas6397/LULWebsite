@@ -32,7 +32,7 @@
 						$result = mysqli_query($conn, $query);
 						$result = $result->fetch_assoc();
 
-						echo "<h2>".$result["blogName"]."</h2>";
+						echo "<h2><a href='./blogEntry.php?id=".$result["blogID"]."'>".$result["blogName"]."</a></h2>";
 						echo "<h5>".$result["blogDate"]."</h5>";
 						echo "<p>".$result["description"]."</p>";
 						?>
@@ -44,7 +44,7 @@
 						$result = mysqli_query($conn, $query);
 						$result = $result->fetch_assoc();
 
-						echo "<h2>".$result["blogName"]."</h2>";
+						echo "<h2><a href='./blogEntry.php?id=".$result["blogID"]."'>".$result["blogName"]."</a></h2>";
 						echo "<h5>".$result["blogDate"]."</h5>";
 						echo "<p>".$result["description"]."</p>";
 

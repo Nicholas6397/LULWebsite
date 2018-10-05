@@ -7,6 +7,7 @@
 </head>
 <body>
 	<div class="wrapper"></div>
+	<div class="content">
 	<?php
 		$characterID = $_GET['id'];
 		if (is_numeric($characterID)){
@@ -30,11 +31,33 @@
 				$query = "SELECT * FROM characters WHERE characterID = '$characterID'";
 				$result = mysqli_query($conn, $query);
 				if(mysqli_num_rows($result)){
-					echo "Character found<br>";
+					?>
+					<table class="table">
+						<tr>
+							<th>Name</th>
+							<th>Race</th>
+							<th>Subrace</th>
+							<th>Class</th>
+							<th>Level</th>
+							<th>Experience Points</th>
+						</tr>
+						<tr>
+							<?php
+							$row = $result->fetch_assoc();
+							echo "<td>".$row["name"]."</td>";
+							echo "<td>".$row["race"]."</td>";
+							echo "<td>".$row["subRace"]."</td>";
+							echo "<td>".$row["class"]."</td>";
+							echo "<td style='text-align:right;'>".$row["lvl"]."</td>";
+							echo "<td style='text-align:right;'>".$row["exp"]."</td>";
+							?>
+						</tr>
+					</table>
+					<?php
 				} else{
 					?>
 						<script type="text/javascript">
-							window.location.href="./404.php";
+							window.location.href="./404_RPGID.php";
 						</script>
 					<?php
 				}
@@ -48,5 +71,6 @@
 			<?php
 		}
 	?>
+	</div>
 </body>
 </html>

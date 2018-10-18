@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Славянское Аниме</title>
-		<link rel="stylesheet" type="text/css" href="./style.css">
+		<link rel="stylesheet" type="text/css" href="/style.css">
 	</head>
 
 	<body>
